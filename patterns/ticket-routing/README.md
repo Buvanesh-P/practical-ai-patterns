@@ -11,6 +11,17 @@ Manual routing or complex ML models can be costly and slow.
 2. When you want a low-cost deterministic solution first
 3. As a fallback or hybrid system with AI-enhanced scoring
 
+## Pattern Overview:
+
+```mermaid
+flowchart LR
+    A[User Query] --> B[Normalize Text]
+    B --> C[Keyword Matching + Weight Scoring]
+    C --> D[Select Highest Score Category]
+    D --> E[Route to Team]
+```
+
+    
 ## How the Pattern Works
 
 1. *Input:* Receive the ticket content (customer complaint or issue).
@@ -24,13 +35,6 @@ Manual routing or complex ML models can be costly and slow.
     - `:category` → predicted ticket category
     - `:confidence` → total score (combined weight for matched keywords)
 
-## Pattern Overview:
-Deterministic + scoring pattern:
-
-```
-Ticket content -> Keyword matching with weights -> Category scoring -> Route to correct team
-```
-
 ## Benefits:
 
 1. Fast and predictable
@@ -40,7 +44,7 @@ Ticket content -> Keyword matching with weights -> Category scoring -> Route to 
 
 ## Reference Implementation (Ruby):
 
-*See File:* `example-ruby/run.rb`
+*See File:* [example-ruby/run.rb](example-ruby/run.rb)
 
 This file contains a reusable method `route_ticket(text)` that takes a customer complaint or query as input and returns:
 
@@ -52,17 +56,7 @@ This file contains a reusable method `route_ticket(text)` that takes a customer 
 route_ticket("I was charged twice and need a refund")
 # => { category: :billing, confidence: 1.2 }
 ```
-The `example-ruby/run.rb` also includes multiple realistic customer queries, e.g.:
 
-```
-customer_queries = [
-  "Hi, I placed an order for a T-shirt on 20th Dec but it hasn't arrived yet. Please help!",
-  "Hello, my recent order came damaged. Can you fix this urgently?",
-  "I was charged twice and need a refund.",
-  "The app is not working and I keep getting an error when I try to login.",
-  "I have a question about your return policy for T-shirts."
-]
-```
 Running the file prints the category and confidence for each query, demonstrating the pattern in action.
 
 Algorithm Sketch:
