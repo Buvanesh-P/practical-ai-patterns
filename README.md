@@ -55,12 +55,12 @@ This repository documents pragmatic patterns that prioritize predictability, cos
   - Output: Category and confidence score
   - Folder: [patterns/ticket-routing](patterns/ticket-routing/README.md)
 
-### 2️⃣ Retrieval-First RAG (Deterministic)
+### 2️⃣ Keyword-Based Retrieval (Deterministic)
 
   - Use case: Retrieve answers from a knowledge base (FAQ, docs) without LLM generation
   - Approach: Weighted keyword matching per KB entry
   - Output: Answer content and confidence score
-  - Folder: [patterns/retrieval-first-rag](patterns/retrieval-first-rag/README.md)
+  - Folder: [patterns/keyword-based-retrieval](patterns/keyword-based-retrieval/README.md)
 
 ## How to use this repo
 
