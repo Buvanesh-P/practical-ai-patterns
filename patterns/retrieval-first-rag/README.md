@@ -1,4 +1,4 @@
-# Pattern: Retrieval-First RAG (Deterministic)
+# Pattern: keyword-based-retrieval
 
 ## Problem
 
@@ -56,7 +56,7 @@ This pattern provides a deterministic, weighted retrieval approach to fetch the 
 --
 ## Reference Implementation (Ruby)
 
-*File:* `example-ruby/run.rb`
+*File:* [example-ruby/run.rb](example-ruby/run.rb)
 
 ```
 result = retrieve_answer("How long does shipping take?")
